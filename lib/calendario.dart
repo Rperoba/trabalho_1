@@ -18,6 +18,33 @@ class calendario extends StatelessWidget {
             return Container(child: Text("Dia ${index + 1}"));
           }),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 1,
+          backgroundColor: Colors.black, // nao esta indo
+          //possui on tap
+          //TODO usar onTap e routes para mudar de pagina
+          fixedColor: Colors.green.shade800,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Inicio",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.schedule),
+              label: "Calendário",
+              backgroundColor: Colors
+                  .black87, //?????????????????????????????????????????????????
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: "GPS",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings_rounded),
+              label: "Configurações",
+            ),
+          ],
+        ),
       ),
     );
   } //TODO colocar uma bottom navigation bar
