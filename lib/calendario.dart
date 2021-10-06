@@ -1,28 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:trabalho_1/main.dart';
-//void main() => runApp(calendario()); // para testes
 
 class calendario extends StatelessWidget {
-  // Mudar para statefull?
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Colocar mes aqui 2"),
+        title: Text("mes"),
       ),
       body: GridView.count(
         crossAxisCount: 7,
         children: List.generate(30, (index) {
-          return Container(child: Text("Dia ${index + 1}"));
+          return GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "pgDeTarefas");
+            },
+            child: Container(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+              margin: EdgeInsets.all(2),
+              decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.green),
+              child: Text(
+                "Dia ${index + 1}",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.black87, fontWeight: FontWeight.w800),
+              ),
+            ),
+          );
         }),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
         backgroundColor: Colors.black, // nao esta indo
-        //possui on tap
-        //TODO usar onTap e routes para mudar de pagina
         fixedColor: Colors.green.shade800,
         unselectedItemColor: Colors.green,
+        showSelectedLabels: false,
         onTap: (int index) {
           trocaDeTela(context, index);
         },
@@ -46,5 +61,5 @@ class calendario extends StatelessWidget {
         ],
       ),
     );
-  } //TODO colocar uma bottom navigation bar
+  }
 }

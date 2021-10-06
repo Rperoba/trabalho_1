@@ -14,10 +14,9 @@ class settings extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 3,
         backgroundColor: Colors.black, // nao esta indo
-        //possui on tap
-        //TODO usar onTap e routes para mudar de pagina
         fixedColor: Colors.green.shade800,
         unselectedItemColor: Colors.green,
+        showSelectedLabels: false,
         onTap: (int index) {
           trocaDeTela(context, index);
         },

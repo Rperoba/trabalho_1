@@ -17,20 +17,24 @@ class pgDeTarefas extends State<MyStatefulWidget> {
         count,
         (i) => Container(
           child: Row(
-            // transformar em funcao e criar varios
             children: <Widget>[
               Flexible(
                   flex: 3, child: Text("Hora")), // colocar um contador de hora
               Spacer(),
               Flexible(
-                  flex: 12,
-                  child: Text(
-                    "Tarefa",
-                    textScaleFactor: 1.5,
-                  )), // colocar um slot para escrever
+                flex: 12,
+                child: Card(
+                    color: Colors.grey[850],
+                    child: (TextField(
+                        style: TextStyle(),
+                        decoration: InputDecoration(
+                          hintText: "Tarefa",
+                          border: InputBorder.none,
+                        )))),
+              ) // colocar um slot para escrever
             ],
           ),
-          height: 50,
+          margin: EdgeInsetsDirectional.fromSTEB(10, 5, 0, 5),
         ),
       );
 
@@ -38,7 +42,7 @@ class pgDeTarefas extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dia D'),
+        title: const Text('Dia Genérico'),
       ),
       body: Container(
         child: ListView(
@@ -49,7 +53,6 @@ class pgDeTarefas extends State<MyStatefulWidget> {
       //IDEIA ter sempre um item "novo", sem precisar clicar em um botão para cria-lo
       //a tela começa com uma aba de tarefa e ao ser preenchida, aparece uma nova aba automaticamente
       floatingActionButton: FloatingActionButton.extended(
-        //TODO trocar para um outro codigo e criar uma nova main
         onPressed: () {
           setState(() {
             _addTarefa();
@@ -60,12 +63,10 @@ class pgDeTarefas extends State<MyStatefulWidget> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
-        showUnselectedLabels: true,
-        backgroundColor: Colors.black, // nao esta indo
-        //possui on tap
-        //TODO usar onTap e routes para mudar de pagina
+        backgroundColor: Colors.black,
         fixedColor: Colors.green.shade800,
         unselectedItemColor: Colors.green,
+        showSelectedLabels: false,
         onTap: (int index) {
           trocaDeTela(context, index);
         },
