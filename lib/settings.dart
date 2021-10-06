@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
 
-//void main() => runApp(calendario()); // para testes
-
-class calendario extends StatelessWidget {
-  // Mudar para statefull?
+class settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Colocar mes aqui 2"),
+        title: Text("Configurações"),
       ),
-      body: GridView.count(
-        crossAxisCount: 7,
-        children: List.generate(30, (index) {
-          return Container(child: Text("Dia ${index + 1}"));
-        }),
+      body: Center(
+        child: Text("Página a fazer"),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1,
+        currentIndex: 3,
         backgroundColor: Colors.black, // nao esta indo
         //possui on tap
         //TODO usar onTap e routes para mudar de pagina
@@ -43,5 +37,5 @@ class calendario extends StatelessWidget {
         ],
       ),
     );
-  } //TODO colocar uma bottom navigation bar
+  }
 }
