@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trabalho_1/main.dart';
 
 class settings extends StatelessWidget {
   @override
@@ -17,6 +18,9 @@ class settings extends StatelessWidget {
         //TODO usar onTap e routes para mudar de pagina
         fixedColor: Colors.green.shade800,
         unselectedItemColor: Colors.green,
+        onTap: (int index) {
+          trocaDeTela(context, index);
+        },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

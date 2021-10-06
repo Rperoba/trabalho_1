@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trabalho_1/main.dart';
 
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
@@ -56,6 +57,36 @@ class pgDeTarefas extends State<MyStatefulWidget> {
         },
         label: Text("Adicione uma tarefa"),
         backgroundColor: Colors.green,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 1,
+        showUnselectedLabels: true,
+        backgroundColor: Colors.black, // nao esta indo
+        //possui on tap
+        //TODO usar onTap e routes para mudar de pagina
+        fixedColor: Colors.green.shade800,
+        unselectedItemColor: Colors.green,
+        onTap: (int index) {
+          trocaDeTela(context, index);
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Inicio",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.schedule),
+            label: "Calendário",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map),
+            label: "GPS",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings_rounded),
+            label: "Configurações",
+          ),
+        ],
       ),
     );
   }

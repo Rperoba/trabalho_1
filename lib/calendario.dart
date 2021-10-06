@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:trabalho_1/main.dart';
 //void main() => runApp(calendario()); // para testes
 
 class calendario extends StatelessWidget {
@@ -23,6 +23,9 @@ class calendario extends StatelessWidget {
         //TODO usar onTap e routes para mudar de pagina
         fixedColor: Colors.green.shade800,
         unselectedItemColor: Colors.green,
+        onTap: (int index) {
+          trocaDeTela(context, index);
+        },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
