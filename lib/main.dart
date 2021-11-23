@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           "calendario": (BuildContext context) => calendario(),
           "home": (BuildContext context) => home(),
-          "maps": (BuildContext context) => maps(),
+          "maps": (BuildContext context) => MyStatefulWidget2(),
           "settings": (BuildContext context) => settings(),
           "pgDeTarefas": (BuildContext context) => MyStatefulWidget(),
         });
