@@ -4,6 +4,10 @@ import 'package:trabalho_1/home.dart';
 import 'package:trabalho_1/maps.dart';
 import 'package:trabalho_1/settings.dart';
 import 'package:trabalho_1/tarefas.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 void main() => runApp(MyApp());
 
