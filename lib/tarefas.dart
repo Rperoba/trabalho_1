@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trabalho_1/main.dart';
+import 'package:trabalho_1/Database.dart';
 
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
@@ -10,7 +11,11 @@ class MyStatefulWidget extends StatefulWidget {
 
 class pgDeTarefas extends State<MyStatefulWidget> {
   int numTarefas = 4;
-
+  String minhaTarefa = "";
+  // ver se dia existe no banco de dados
+  //se existir pegar as informacoes dele
+  //se nao existir, criar um novo
+  Dia diaAtual = new Dia(data: 01011997, tarefa: "", hora: 0, feito: 0);
   void _addTarefa() => numTarefas++;
 
   List<Container> _criaTarefas(int count) => List.generate(
